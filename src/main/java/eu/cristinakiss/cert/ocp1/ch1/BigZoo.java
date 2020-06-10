@@ -1,4 +1,4 @@
-//package eu.cristinakiss.cert.ocp1.ch1;
+package eu.cristinakiss.cert.ocp1.ch1;
 
 import eu.cristinakiss.cert.ocp1.ch1.Comments;
 
