@@ -1,39 +1,39 @@
-//package eu.cristinakiss.cert.webtest;
-//
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.firefox.FirefoxDriver;
-//
-//public class WebtestMain {
-//
-//    public static void main(String[] args) {
-//        // declaration and instantiation of objects/variables
-//        System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe");
-//        WebDriver driver = new FirefoxDriver();
-//        //comment the above 2 lines and uncomment below 2 lines to use Chrome
-//        //System.setProperty("webdriver.chrome.driver","G:\\chromedriver.exe");
-//        //WebDriver driver = new ChromeDriver();
-//
-//        String baseUrl = "http://demo.guru99.com/test/newtours/";
-//        String expectedTitle = "Welcome: Mercury Tours";
-//        String actualTitle = "";
-//
-//        // launch Fire fox and direct it to the Base URL
-//        driver.get(baseUrl);
-//
-//        // get the actual value of the title
-//        actualTitle = driver.getTitle();
-//
-//        /*
-//         * compare the actual title of the page with the expected one and print
-//         * the result as "Passed" or "Failed"
-//         */
-//        if (actualTitle.contentEquals(expectedTitle)){
-//            System.out.println("Test Passed!");
-//        } else {
-//            System.out.println("Test Failed");
-//        }
-//
-//        //close Fire fox
-//        driver.close();
-//    }
-//}
+package eu.cristinakiss.cert.webtest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebtestMain {
+
+    private static final String USERNAME = "L";
+    private static final String PASSWORD = "L";
+
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
+        String baseUrl = "https://testbanks.wiley.com/WPDACE/Login";
+
+        // launch the browser
+        driver.get(baseUrl);
+
+        // get the actual value of the title
+        String actualTitle = driver.getTitle();
+        System.out.println(actualTitle);
+
+        WebElement usernameElement = driver.findElement(By.id("username"));
+        usernameElement.sendKeys("helllllllo");
+//        System.out.println(usernameElement.getAttribute("value"));
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        //close the browser
+        driver.close();
+    }
+}
